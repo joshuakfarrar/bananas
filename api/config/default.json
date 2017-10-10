@@ -1,0 +1,37 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "83b4084ded05ca0c4add64a78be60c6d1b47cc679795243d5f0b0bb9d543332575b29c2d3c9d7e13ca7ee74174713e7ce1d1301df0fafb5536af93326f1888c8670b1b2a4c5d78351ae03b0712e50ccc7b594be837ba40f1ec527ec493eb895b423d6c6cba621b03efdb4624f8e5db8aa44ec5bff566042b733d2ff7b4b67e396e9bd6fa271342e20d67843a0ab4510d48f70fecd6ba1a3ec16d526b914033584715841ea0059a16776667e2b3717848bff1b958bc3a59c901296e1bdcce120510e82e7e611900e4f10f74ddf6d100f837994362bb8e9f18668666d6d2eb40c2d66791a85b33400a2aaee621fb4df67a592b22f0e76fbe10cbd01e0637139082",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mysql": {
+    "client": "mysql2",
+    "connection": "mysql://root:@localhost:3306/food_api"
+  }
+}
